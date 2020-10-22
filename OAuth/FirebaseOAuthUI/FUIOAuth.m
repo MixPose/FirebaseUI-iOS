@@ -200,6 +200,7 @@ NS_ASSUME_NONNULL_BEGIN
                             fromBundleNameOrNil:@"FirebaseOAuthUI"];
   UIColor *buttonColor = [UIColor blackColor];
   UIColor *buttonTextColor = [UIColor whiteColor];
+<<<<<<< HEAD
   if (userInterfaceStyle == UIUserInterfaceStyleDark) {
     iconImage = [iconImage imageWithTintColor:[UIColor blackColor]];
     buttonColor = [UIColor whiteColor];
@@ -211,6 +212,13 @@ NS_ASSUME_NONNULL_BEGIN
   } else {
     iconImage = [iconImage imageWithTintColor:[UIColor whiteColor]];
   }
+=======
+//   if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+//     iconImage = [iconImage imageWithTintColor:[UIColor blackColor]];
+//     buttonColor = [UIColor whiteColor];
+//     buttonTextColor = [UIColor blackColor];
+//   }
+>>>>>>> always use black apple sign in button
   FUIOAuth *provider = [[FUIOAuth alloc] initWithAuthUI:[FUIAuth defaultAuthUI]
                                              providerID:@"apple.com"
                                         buttonLabelText:@"Sign in with Apple"
