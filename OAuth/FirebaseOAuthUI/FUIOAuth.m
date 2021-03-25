@@ -200,7 +200,6 @@ NS_ASSUME_NONNULL_BEGIN
                             fromBundleNameOrNil:@"FirebaseOAuthUI"];
   UIColor *buttonColor = [UIColor blackColor];
   UIColor *buttonTextColor = [UIColor whiteColor];
-<<<<<<< HEAD
   if (userInterfaceStyle == UIUserInterfaceStyleDark) {
     iconImage = [iconImage imageWithTintColor:[UIColor blackColor]];
     buttonColor = [UIColor whiteColor];
@@ -212,13 +211,11 @@ NS_ASSUME_NONNULL_BEGIN
   } else {
     iconImage = [iconImage imageWithTintColor:[UIColor whiteColor]];
   }
-=======
 //   if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
 //     iconImage = [iconImage imageWithTintColor:[UIColor blackColor]];
 //     buttonColor = [UIColor whiteColor];
 //     buttonTextColor = [UIColor blackColor];
 //   }
->>>>>>> always use black apple sign in button
   FUIOAuth *provider = [[FUIOAuth alloc] initWithAuthUI:[FUIAuth defaultAuthUI]
                                              providerID:@"apple.com"
                                         buttonLabelText:@"Sign in with Apple"
@@ -348,7 +345,6 @@ NS_ASSUME_NONNULL_BEGIN
   FIROAuthCredential *credential = [FIROAuthProvider credentialWithProviderID:@"apple.com"
                                                                       IDToken:idToken
                                                                   accessToken:nil];
-<<<<<<< HEAD
   FIRAuthResultCallback result;
   NSPersonNameComponents *nameComponents = appleIDCredential.fullName;
   if (nameComponents != nil) {
@@ -365,7 +361,6 @@ NS_ASSUME_NONNULL_BEGIN
     };
   }
   _providerSignInCompletion(credential, nil, result, nil);
-=======
   
   // Only first time sign in will get the name
   [[NSUserDefaults standardUserDefaults] setObject:appleIDCredential.fullName.givenName forKey:@"givenName"];
@@ -373,7 +368,6 @@ NS_ASSUME_NONNULL_BEGIN
   [[NSUserDefaults standardUserDefaults] synchronize];
     
   _providerSignInCompletion(credential, nil, nil, nil);
->>>>>>> work around getting name from Apple SignIn
 }
 
 - (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithError:(NSError *)error API_AVAILABLE(ios(13.0)) {
